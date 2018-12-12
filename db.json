@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "givenName": "Martin",
+      "familyName": "Hylleberg",
+      "username": "mnh",
+      "id": 1
+    },
+    {
+      "givenName": "Peter",
+      "familyName": "Petersen",
+      "username": "pts",
+      "id": 2
+    }
+  ],
+  "events": []
+}

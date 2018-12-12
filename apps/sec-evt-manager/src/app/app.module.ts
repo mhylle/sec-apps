@@ -1,23 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { NxModule } from '@nrwl/nx';
-import { RouterModule } from '@angular/router';
-import { CreateComponent } from './users/create/create.component';
-import { ViewComponent } from './users/view/view.component';
-import { ListComponent } from './users/list/list.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
+import {NxModule} from '@nrwl/nx';
+import {RouterModule} from '@angular/router';
+import {CreateUserComponent} from './users/create/create-user.component';
+import {ViewUserComponent} from './users/view/view-user.component';
+import {ListUserComponent} from './users/list/list-user.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
-  declarations: [AppComponent, CreateComponent, ViewComponent, ListComponent],
+  declarations: [AppComponent, CreateUserComponent, ViewUserComponent, ListUserComponent],
   imports: [
     BrowserModule,
     NxModule.forRoot(),
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
-    BrowserAnimationsModule
+    RouterModule.forRoot([], {initialNavigation: 'enabled'}),
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
