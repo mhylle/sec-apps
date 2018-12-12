@@ -1,0 +1,22 @@
+<div>
+  <mat-card *ngFor="let event of secEvents" class="mat-card">
+    <mat-card-header>
+      <div>{{event.name}}</div>
+    </mat-card-header>
+    <mat-card-subtitle>
+      <div>{{event.description}}</div>
+    </mat-card-subtitle>
+    <mat-card-content class="eventDetails">
+      <div>From</div>
+      <div>{{event.startTime | date: 'dd/MM-yyyy HH:mm'}}</div>
+      <div>To</div>
+      <div>{{event.endTime | date: 'dd/MM-yyyy HH:mm'}}</div>
+      <div>Can sign up until</div>
+      <div>{{event.endSign | date: 'dd/MM-yyyy HH:mm'}}</div>
+      <div *ngIf="event.maximumAttendees > 0">Maximum attendees</div>
+      <div *ngIf="event.maximumAttendees > 0">{{event.maximumAttendees}}</div>
+      <div>Takes place at:</div>
+      <div>{{event.location}}</div>
+    </mat-card-content>
+  </mat-card>
+</div>

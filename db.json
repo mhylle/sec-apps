@@ -13,5 +13,20 @@
       "id": 2
     }
   ],
-  "events": []
+  "events": [
+    {
+      "name": "Julefrokost",
+      "description": "Så skal der som sædvanligt holdes en fantastisk julefrokost.\nDer vil som sædvanligt være julemad, masser af øl og boblevand.\n\nVi glæder os til at se jer",
+      "startTime": "2018-12-14T16:00:46.000Z",
+      "endTime": "2018-12-15T01:00:56.000Z",
+      "startSign": "2018-12-04T22:34:05.000Z",
+      "endSign": "2018-12-13T22:34:09.000Z",
+      "endCancel": "2018-12-14T22:34:14.000Z",
+      "location": "Kantinen ",
+      "maximumAttendees": "550",
+      "fee": "0",
+      "noShowFee": "0",
+      "id": 1
+    }
+  ]
 }

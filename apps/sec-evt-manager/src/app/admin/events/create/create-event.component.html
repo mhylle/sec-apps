@@ -1,0 +1,87 @@
+<div>
+  <div class="nameDescription">
+    <div>
+      <mat-form-field [floatLabel]="nameLabel">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="newEvent.name" placeholder="Name for the event" required>
+      </mat-form-field>
+    </div>
+    <div class="description">
+      <mat-form-field [floatLabel]="descriptionLabel">
+        <mat-label>Description</mat-label>
+        <textarea matNativeControl [(ngModel)]="newEvent.description" type="text" name="eventDescription"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="timeInformation">
+    <div>
+      <mat-form-field [floatLabel]="fromLabel">
+        <mat-label>From</mat-label>
+        <input matInput [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time"
+               [(ngModel)]="newEvent.startTime">
+        <owl-date-time #dt1></owl-date-time>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field [floatLabel]="toLabel">
+        <mat-label>To</mat-label>
+        <input matInput [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2" placeholder="Date Time"
+               [(ngModel)]="newEvent.endTime">
+        <owl-date-time #dt2></owl-date-time>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field [floatLabel]="signStartLabel">
+        <mat-label>Signup starts</mat-label>
+        <input matInput [owlDateTime]="dt3" [owlDateTimeTrigger]="dt3" placeholder="Date Time"
+               [(ngModel)]="newEvent.startSign">
+        <owl-date-time #dt3></owl-date-time>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field [floatLabel]="signEndLabel">
+        <mat-label>Can sign up until</mat-label>
+        <input matInput [owlDateTime]="dt4" [owlDateTimeTrigger]="dt4" placeholder="Date Time"
+               [(ngModel)]="newEvent.endSign">
+        <owl-date-time #dt4></owl-date-time>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field [floatLabel]="signCancelTimeLabel">
+        <mat-label>Last cancel time</mat-label>
+        <input matInput [owlDateTime]="dt5" [owlDateTimeTrigger]="dt5" placeholder="Date Time"
+               [(ngModel)]="newEvent.endCancel">
+        <owl-date-time #dt5></owl-date-time>
+      </mat-form-field>
+    </div>
+  </div>
+  <div>
+    <mat-form-field [floatLabel]="locationLabel">
+      <mat-label>Takes place at</mat-label>
+      <input matInput [(ngModel)]="newEvent.location" placeholder="Location of the event">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field [floatLabel]="maxAttendeesLabel">
+      <mat-label>Maximum attendees</mat-label>
+      <input matInput [(ngModel)]="newEvent.maximumAttendees" placeholder="Maximum attendees">
+    </mat-form-field>
+  </div>
+  <div class="economy">
+    <div>
+      <mat-form-field [floatLabel]="feeLabel">
+        <mat-label>Fee to attend</mat-label>
+        <input matInput [(ngModel)]="newEvent.fee" placeholder="Fee">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field [floatLabel]="noShowLabel">
+        <mat-label>Fee for not attending</mat-label>
+        <input matInput [(ngModel)]="newEvent.noShowFee" placeholder="No show fee">
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<div>
+  <button (click)="create()">Create</button>
+</div>

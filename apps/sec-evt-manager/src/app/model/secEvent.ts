@@ -1,6 +1,6 @@
 import {User} from './user';
 
-export class Event {
+export class SecEvent {
   name: string;
   description: string;
   startTime: Date;
@@ -10,7 +10,7 @@ export class Event {
   endCancel: Date;
   location: string;
   fee: number;
-  noshowfee: number;
+  noShowFee: number;
   maximumAttendees: number;
   attendees: User[];
 }

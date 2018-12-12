@@ -1,0 +1,8 @@
+.mat-card {
+  width: 500px;
+}
+
+.eventDetails {
+  display: grid;
+  grid-template-columns: auto auto;
+}

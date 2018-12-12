@@ -1,0 +1,24 @@
+.nameDescription {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.name {
+
+}
+
+.description {
+  width: 100%;
+}
+
+.timeInformation {
+  display: grid;
+  grid-template-columns: auto auto;
+
+}
+
+.economy {
+  display: grid;
+  grid-template-columns: auto auto;
+
+}
