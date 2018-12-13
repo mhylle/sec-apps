@@ -1,7 +1,9 @@
 <div>
-  <mat-card *ngFor="let event of secEvents" class="mat-card">
-    <mat-card-header>
-      <div>{{event.name}}</div>
+  <mat-card *ngFor="let event of secEvents" class="sec-event-card">
+    <mat-card-header class="sec-event-card-header">
+      <div mat-card-avatar class="example-header-image "><img src="./assets/206167_Julefrokost_Rverstuen_1024_x_576.jpg"
+                                                              width="64"/></div>
+      <mat-card-title>{{event.name}}</mat-card-title>
     </mat-card-header>
     <mat-card-subtitle>
       <div>{{event.description}}</div>

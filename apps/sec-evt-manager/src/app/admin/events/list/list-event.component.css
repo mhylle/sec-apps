@@ -1,8 +1,18 @@
-.mat-card {
-  width: 500px;
+.sec-event-card {
+  width: 400px;
+  margin: 16px;
+}
+
+.sec-event-card-header {
+  /*background-color: lightgray;*/
 }
 
 .eventDetails {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+.example-header-image {
+  /*background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');*/
+  background-size: cover;
 }
