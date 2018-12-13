@@ -1,3 +1,7 @@
+.eventContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(425px, 1fr));
+}
 .sec-event-card {
   width: 400px;
   margin: 16px;
@@ -5,6 +9,15 @@
 
 .sec-event-card-header {
   /*background-color: lightgray;*/
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.eventDescription {
+  grid-column-start: 0;
+  grid-column-end: span 2;
+  margin-bottom: 8px;
 }
 
 .eventDetails {
@@ -13,6 +26,7 @@
 }
 
 .example-header-image {
-  /*background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');*/
-  background-size: cover;
+  margin-right: 16px;
 }
+
+

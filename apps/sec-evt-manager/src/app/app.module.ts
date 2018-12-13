@@ -24,9 +24,11 @@ import {
 import {ListEventComponent} from "./admin/events/list/list-event.component";
 import {CreateEventComponent} from "./admin/events/create/create-event.component";
 import {OwlDateTimeModule, OwlNativeDateTimeModule} from "ng-pick-datetime";
+import {ViewEventComponent} from "./admin/events/view/view-event.component";
+import { EventAttendeesComponent } from './admin/events/view/attendees/event-attendees.component';
 
 @NgModule({
-  declarations: [AppComponent, CreateUserComponent, ViewUserComponent, ListUserComponent, MenuComponent, CreateEventComponent, ListEventComponent],
+  declarations: [AppComponent, CreateUserComponent, ViewUserComponent, ListUserComponent, MenuComponent, CreateEventComponent, ListEventComponent, ViewEventComponent, EventAttendeesComponent],
   imports: [
     BrowserModule,
     NxModule.forRoot(),

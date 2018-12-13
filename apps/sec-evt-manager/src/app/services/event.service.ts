@@ -18,4 +18,8 @@ export class EventService {
   addEvent(event: SecEvent): Observable<SecEvent[]> {
     return this.http.post<SecEvent[]>(environment.backend + '/events/', event);
   }
+
+  getEvent(id: string): Observable<SecEvent> {
+    return this.http.get<SecEvent>(environment.backend + '/events/' + id);
+  }
 }

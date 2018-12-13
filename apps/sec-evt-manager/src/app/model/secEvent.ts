@@ -1,6 +1,7 @@
 import {User} from './user';
 
 export class SecEvent {
+  id: number;
   name: string;
   description: string;
   startTime: Date;

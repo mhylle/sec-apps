@@ -1,0 +1,6 @@
+<div *ngIf="secEvent">
+  <div>{{secEvent.name}} has <span *ngIf="!secEvent.attendees">0</span><span *ngIf="secEvent.attendees">{{secEvent.attendees.length}}</span> attendees</div>
+  <div *ngFor="let user of secEvent.attendees">
+    <div>{{user.givenName}} {{user.familyName}}</div>
+  </div>
+</div>
