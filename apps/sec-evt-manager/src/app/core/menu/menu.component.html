@@ -1,29 +1,31 @@
-<!--<mat-sidenav #drawer class="sidenav" fixedInViewport="true"-->
-<!--[attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"-->
-<!--[mode]="(isHandset$ | async) ? 'over' : 'side'"-->
-<!--[opened]="!(isHandset$ | async)">-->
 <mat-toolbar color="primary">
-  <button
-    type="button"
-    aria-label="Toggle sidenav"
-    mat-icon-button
-    (click)="drawer.toggle()"
-    *ngIf="isHandset$ | async">
-    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-  </button>
+  <!--<button-->
+  <!--type="button"-->
+  <!--aria-label="Toggle sidenav"-->
+  <!--mat-icon-button-->
+  <!--(click)="drawer.toggle()"-->
+  <!--*ngIf="isHandset$ | async">-->
+  <!--<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>-->
+  <!--</button>-->
   <div>Systematic Event Manager</div>
   <div class="menu-panel">
-    <button mat-icon-button [matMenuTriggerFor]="userMenu" class="mat-icon-button">Users</button>
-    <mat-menu #userMenu="matMenu">
-      <button mat-menu-item routerLink="createUser">Create</button>
-      <button mat-menu-item routerLink="listUsers">List</button>
+    <button mat-icon-button [matMenuTriggerFor]="userMenu" class="mat-icon-button" *ngIf="isViableMenuItem('users')">Users
+    </button>
+    <mat-menu #userMenu="matMenu" >
+      <button mat-menu-item routerLink="/createUser">Create</button>
+      <button mat-menu-item routerLink="/listUsers">List</button>
     </mat-menu>
-    <button mat-icon-button [matMenuTriggerFor]="eventMenu" class="mat-icon-button">Events</button>
-    <mat-menu #eventMenu="matMenu">
-      <button mat-menu-item routerLink="createEvent">Create</button>
-      <button mat-menu-item routerLink="listEvents">List</button>
+    <button mat-icon-button [matMenuTriggerFor]="eventMenu" class="mat-icon-button" *ngIf="isViableMenuItem('events')">Events
+    </button>
+    <mat-menu #eventMenu="matMenu" >
+      <button mat-menu-item routerLink="/createEvent">Create</button>
+      <button mat-menu-item routerLink="/listEvents">List</button>
     </mat-menu>
-  </div>
 
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="mat-icon-button" *ngIf="isViableMenuItem('login')" (click)="login()">Login</button>
+    <button mat-icon-button class="mat-icon-button" *ngIf="isViableMenuItem('logout')" (click)="logout()">Logout</button>
+  </div>
+  <!--<button type="button" mat-icon-button aria-label="Login" (click)="login()">Login</button>-->
+  <!--<button type="button" mat-icon-button aria-label="Logout" (click)="logout()">Logout</button>-->
 </mat-toolbar>
-<!-- Add Content Here -->

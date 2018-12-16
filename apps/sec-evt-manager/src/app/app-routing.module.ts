@@ -4,13 +4,20 @@ import {CreateUserComponent} from "./admin/users/create/create-user.component";
 import {ListUserComponent} from "./admin/users/list/list-user.component";
 import {ListEventComponent} from "./admin/events/list/list-event.component";
 import {CreateEventComponent} from "./admin/events/create/create-event.component";
-import {ViewEventComponent} from './admin/events/view/view-event.component';
 import {EventAttendeesComponent} from "./admin/events/view/attendees/event-attendees.component";
+import {LoginComponent} from "./core/security/login/login.component";
+import {AuthGuard} from "./core/security/auth/auth.guard";
+import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
     path: 'createUser',
-    component: CreateUserComponent
+    component: CreateUserComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'listUsers',
@@ -27,6 +34,10 @@ const routes: Routes = [
   {
     path: 'event/:id/attendees',
     component: EventAttendeesComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
