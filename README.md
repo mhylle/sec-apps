@@ -1,3 +1,44 @@
+# Systematic Employees Club Event Manager
+
+## Introduction
+This project is about helping the SEC manage their events. The project includes basic event and user management, but will also over time introduce groups.
+
+Not all features listed below are to be implemented in the first release. This is as must a wish list as it is a feature list.
+Proper releases will be made listing the features that goes into that release.
+
+
+## Features
+* Events
+    * Attend/unattend events
+    * Show who is attending an event
+    * Calendar integration
+    * Receive notification about an event (if opt-in)
+* User management
+  * Groups
+    * Sports
+    * Parties
+    * Friday bar
+    * ...
+  * Teams
+    * Team for Julefrokost
+    * Administrator team.
+* Admin functionality
+  * Events
+    * Enable/disable events
+      * Makes them visible to specific groups, but invisible to others
+    * Signup users
+    * Remove users
+    * Send mails to attendees
+    * Set event type such as "Julefrokost" for year on year tracking
+      * Statistics
+        * Graphs on attendence.
+        * Consumption from other years    
+      * Copy last years event for easy creation.     
+  * Users
+    * TODO
+  
+
+
 # SecApps
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx).
