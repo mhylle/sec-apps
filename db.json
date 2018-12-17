@@ -98,7 +98,16 @@
       "maximumAttendees": "30",
       "fee": "200",
       "noShowFee": "300",
-      "id": 5
+      "id": 5,
+      "attendees": [
+        {
+          "givenName": "Martin",
+          "familyName": "Hylleberg",
+          "username": "mnh",
+          "accessLevel": "admin",
+          "id": 1
+        }
+      ]
     }
   ]
 }

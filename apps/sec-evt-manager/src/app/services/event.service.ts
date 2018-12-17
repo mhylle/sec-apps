@@ -1,8 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
 import {environment} from "../../environments/environment";
 import {SecEvent} from "../model/secEvent";
+import {User} from "../model/user";
+import {isDefined} from "@angular/compiler/src/util";
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +23,17 @@ export class EventService {
 
   getEvent(id: string): Observable<SecEvent> {
     return this.http.get<SecEvent>(environment.backend + '/events/' + id);
+  }
+
+  attend(secEvent: SecEvent, currentUser: User) : Observable<SecEvent> {
+    if (!isDefined(secEvent.attendees) || secEvent.attendees === null) {
+      secEvent.attendees = [];
+    }
+    if (secEvent.attendees.find(value => value.username === currentUser.username)) {
+      return of();
+    } else {
+      secEvent.attendees.push(currentUser);
+    }
+    return this.http.put<SecEvent>(environment.backend + '/events/' + secEvent.id, secEvent);
   }
 }

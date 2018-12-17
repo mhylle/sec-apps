@@ -12,7 +12,6 @@ import {isDefined} from "@angular/compiler/src/util";
 export class ListEventComponent implements OnInit {
   showOld = true;
   secEvents: SecEvent[];
-
   oldEvents: SecEvent[];
 
   constructor(private eventService: EventService, private userService: UserService) {
@@ -50,10 +49,6 @@ export class ListEventComponent implements OnInit {
     });
   }
 
-  // isSigned(secEvent: SecEvent, user: User) : boolean {
-  //
-  // }
-
   signed(secEvent: SecEvent): boolean {
     const currentUser = this.userService.currentUser;
     if (isDefined(currentUser) || currentUser === null) {
@@ -64,17 +59,15 @@ export class ListEventComponent implements OnInit {
       return users.length > 0;
     }
     return false;
-
-
   }
 
   attend(secEvent: SecEvent) {
     if (!secEvent.attendees) {
       secEvent.attendees = [];
     }
-    secEvent.attendees.push(this.userService.currentUser);
-    console.log('attend');
+    this.eventService.attend(secEvent, this.userService.currentUser).subscribe( response => {
 
+    });
   }
 
   unattend(secEvent: SecEvent) {
