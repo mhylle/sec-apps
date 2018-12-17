@@ -8,10 +8,6 @@ This project is about helping the SEC manage their events. The project includes 
 * Events
     * Basic CRUD
     * Show who is attending an event
-    * Admin functionality
-      * Signup users
-      * Remove users
-      * Send mails to attendees
 * User management
   * Groups
     * Sports
@@ -21,14 +17,20 @@ This project is about helping the SEC manage their events. The project includes 
   * Teams
     * Team for Julefrokost
     * Administrator team.
-* Event management
-  * Tracked as "event"
-    * Example: Tracked as "julefrokost". 
-    * Show attendance graphs based on tracked as.
-    * Show consumption for the previous years.
-    * Copy last years event for easy creation. 
-  * Enable/disable events
-    * Makes them visible to specific groups, but invisible to others
+* Admin functionality
+  * Events
+    * Enable/disable events
+      * Makes them visible to specific groups, but invisible to others
+    * Signup users
+    * Remove users
+    * Send mails to attendees
+    * Set event type such as "Julefrokost" for year on year tracking
+      * Statistics
+        * Graphs on attendence.
+        * Consumption from other years    
+      * Copy last years event for easy creation.     
+  * Users
+    * TODO
   
 
 
