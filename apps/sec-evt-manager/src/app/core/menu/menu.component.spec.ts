@@ -1,15 +1,13 @@
-import { LayoutModule } from '@angular/cdk/layout';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatButtonModule,
-  MatIconModule,
-  MatListModule,
-  MatSidenavModule,
-  MatToolbarModule,
-} from '@angular/material';
+import {LayoutModule} from '@angular/cdk/layout';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { MenuComponent } from './menu.component';
+import {MenuComponent} from './menu.component';
+import {MaterialModule} from "../material-module/material.module";
+import {FormsModule} from "@angular/forms";
+import {OwlDateTimeModule, OwlNativeDateTimeModule} from "ng-pick-datetime";
+import {RouterTestingModule} from "@angular/router/testing";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -19,14 +17,16 @@ describe('MenuComponent', () => {
     TestBed.configureTestingModule({
       declarations: [MenuComponent],
       imports: [
-        NoopAnimationsModule,
+        BrowserAnimationsModule,
         LayoutModule,
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        MatSidenavModule,
-        MatToolbarModule,
-      ]
+        RouterTestingModule,
+        HttpClientTestingModule,
+        FormsModule,
+        OwlDateTimeModule,
+        OwlNativeDateTimeModule,
+        MaterialModule
+      ],
+      providers: []
     }).compileComponents();
   }));
 

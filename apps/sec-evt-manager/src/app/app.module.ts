@@ -13,21 +13,14 @@ import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
 import {MenuComponent} from './core/menu/menu.component';
 import {LayoutModule} from '@angular/cdk/layout';
-import {
-  MatButtonModule, MatCardModule, MatFormFieldModule,
-  MatIconModule, MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatSidenavModule,
-  MatToolbarModule
-} from '@angular/material';
 import {ListEventComponent} from "./admin/events/list/list-event.component";
 import {CreateEventComponent} from "./admin/events/create/create-event.component";
 import {OwlDateTimeModule, OwlNativeDateTimeModule} from "ng-pick-datetime";
 import {ViewEventComponent} from "./admin/events/view/view-event.component";
-import { EventAttendeesComponent } from './admin/events/view/attendees/event-attendees.component';
-import { LoginComponent } from './core/security/login/login.component';
-import { HomeComponent } from './home/home.component';
+import {EventAttendeesComponent} from './admin/events/view/attendees/event-attendees.component';
+import {LoginComponent} from './core/security/login/login.component';
+import {HomeComponent} from './home/home.component';
+import {MaterialModule} from "./core/material-module/material.module";
 
 @NgModule({
   declarations: [AppComponent, CreateUserComponent, ViewUserComponent, ListUserComponent, MenuComponent, CreateEventComponent, ListEventComponent, ViewEventComponent, EventAttendeesComponent, LoginComponent, HomeComponent],
@@ -40,17 +33,9 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     AppRoutingModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatFormFieldModule,
-    MatInputModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
-    MatCardModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
