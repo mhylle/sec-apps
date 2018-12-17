@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sec-apps-view',
+  selector: 'sec-apps-view-user',
   templateUrl: './view-user.component.html',
   styleUrls: ['./view-user.component.css']
 })

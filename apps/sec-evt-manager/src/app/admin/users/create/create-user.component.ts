@@ -3,7 +3,7 @@ import {UserService} from "../../../services/user.service";
 import {User} from "../../../model/user";
 
 @Component({
-  selector: 'sec-apps-create',
+  selector: 'sec-apps-create-user',
   templateUrl: './create-user.component.html',
   styleUrls: ['./create-user.component.css']
 })

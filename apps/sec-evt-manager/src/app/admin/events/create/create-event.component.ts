@@ -3,7 +3,7 @@ import {EventService} from "../../../services/event.service";
 import {SecEvent} from "../../../model/secEvent";
 
 @Component({
-  selector: 'sec-apps-create',
+  selector: 'sec-apps-create-event',
   templateUrl: './create-event.component.html',
   styleUrls: ['./create-event.component.css']
 })

@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
 import {SecEvent} from "../../../../model/secEvent";
 
 @Component({
-  selector: 'sec-apps-attendees',
+  selector: 'sec-apps-event-attendees',
   templateUrl: './event-attendees.component.html',
   styleUrls: ['./event-attendees.component.css']
 })

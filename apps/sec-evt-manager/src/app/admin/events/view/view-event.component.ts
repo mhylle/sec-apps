@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {SecEvent} from "../../../model/secEvent";
 
 @Component({
-  selector: 'sec-apps-view',
+  selector: 'sec-apps-view-event',
   templateUrl: './view-event.component.html',
   styleUrls: ['./view-event.component.css']
 })

@@ -3,7 +3,7 @@ import {UserService} from "../../../services/user.service";
 import {User} from "../../../model/user";
 
 @Component({
-  selector: 'sec-apps-list',
+  selector: 'sec-apps-list-users',
   templateUrl: './list-user.component.html',
   styleUrls: ['./list-user.component.css']
 })
