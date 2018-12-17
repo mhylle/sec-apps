@@ -3,11 +3,16 @@
 ## Introduction
 This project is about helping the SEC manage their events. The project includes basic event and user management, but will also over time introduce groups.
 
+Not all features listed below are to be implemented in the first release. This is as must a wish list as it is a feature list.
+Proper releases will be made listing the features that goes into that release.
+
 
 ## Features
 * Events
-    * Basic CRUD
+    * Attend/unattend events
     * Show who is attending an event
+    * Calendar integration
+    * Receive notification about an event (if opt-in)
 * User management
   * Groups
     * Sports
