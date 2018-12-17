@@ -40,6 +40,7 @@ Proper releases will be made listing the features that goes into that release.
 
 
 # SecApps
+[![Build Status](https://travis-ci.com/mhylle/sec-apps.svg?branch=master)](https://travis-ci.com/mhylle/sec-apps)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx).
 
