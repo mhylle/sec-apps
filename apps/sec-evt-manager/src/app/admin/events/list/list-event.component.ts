@@ -12,7 +12,8 @@ import {isDefined} from "@angular/compiler/src/util";
 export class ListEventComponent implements OnInit {
   showOld = true;
   secEvents: SecEvent[];
-  private oldEvents: SecEvent[];
+
+  oldEvents: SecEvent[];
 
   constructor(private eventService: EventService, private userService: UserService) {
   }

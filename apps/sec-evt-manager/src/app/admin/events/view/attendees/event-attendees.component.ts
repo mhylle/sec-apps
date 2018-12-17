@@ -12,7 +12,7 @@ import {SecEvent} from "../../../../model/secEvent";
 })
 export class EventAttendeesComponent implements OnInit {
   private $event: Observable<SecEvent>;
-  private secEvent: SecEvent;
+   secEvent: SecEvent;
 
   constructor(private route: ActivatedRoute, private eventService: EventService) {
   }
