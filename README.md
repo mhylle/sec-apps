@@ -1,4 +1,4 @@
-# Systematic Employees Club Event manager (SECEM)
+# Systematic Employees Club Event Manager
 
 ## Introduction
 This project is about helping the SEC manage their events. The project includes basic event and user management, but will also over time introduce groups.
