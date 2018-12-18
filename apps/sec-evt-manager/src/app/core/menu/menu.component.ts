@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
   logout() {
     this.userService.doLogout();
     // noinspection JSIgnoredPromiseFromCall
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
 
   isViableMenuItem(menu: string) {

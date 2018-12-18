@@ -9,7 +9,7 @@ import {environment} from "../../environments/environment";
 })
 export class UserService {
   private userSource = new Subject<User>();
-  currentUser: User;
+  currentUser: User = null;
   userLoggedIn$ = this.userSource.asObservable();
 
   constructor(private http: HttpClient) {
@@ -21,10 +21,6 @@ export class UserService {
 
   addUser(user: User): Observable<User[]> {
     return this.http.post<User[]>(environment.backend + '/users/', user);
-  }
-
-  isLoggedIn(user: User) {
-    return this.currentUser === user && this.currentUser != null;;
   }
 
   doLogin(user: User) {

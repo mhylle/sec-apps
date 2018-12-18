@@ -25,7 +25,7 @@ export class EventService {
     return this.http.get<SecEvent>(environment.backend + '/events/' + id);
   }
 
-  attend(secEvent: SecEvent, currentUser: User) : Observable<SecEvent> {
+  attend(secEvent: SecEvent, currentUser: User): Observable<SecEvent> {
     if (!isDefined(secEvent.attendees) || secEvent.attendees === null) {
       secEvent.attendees = [];
     }
@@ -34,6 +34,14 @@ export class EventService {
     } else {
       secEvent.attendees.push(currentUser);
     }
+    return this.http.put<SecEvent>(environment.backend + '/events/' + secEvent.id, secEvent);
+  }
+
+  unattend(secEvent: SecEvent, currentUser: User): Observable<SecEvent> {
+    if (!isDefined(secEvent.attendees) || secEvent.attendees === null) {
+      secEvent.attendees = [];
+    }
+    secEvent.attendees = secEvent.attendees.filter(value =>  value.username !== currentUser.username);
     return this.http.put<SecEvent>(environment.backend + '/events/' + secEvent.id, secEvent);
   }
 }

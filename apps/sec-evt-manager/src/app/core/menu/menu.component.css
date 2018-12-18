@@ -16,10 +16,22 @@
 }
 
 .example-spacer {
-  flex: 1 1 auto;
+  /*flex: 1 1 auto;*/
 }
 
 a {
   color: white;
   text-decoration: none;
+}
+
+.leftMenuItems {
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 100%;
+}
+
+.rightMenuItems {
+  width: 100%;
+  text-align: right;
+  height: 100%;
 }

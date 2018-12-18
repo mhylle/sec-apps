@@ -15,11 +15,16 @@ export class ListEventComponent implements OnInit {
   secEvents: SecEvent[];
   oldEvents: SecEvent[];
   currentUser: User = null;
+  isAttendEnabled = false;
 
   constructor(private eventService: EventService, private userService: UserService) {
   }
 
   ngOnInit() {
+    this.currentUser = this.userService.currentUser;
+    if (this.currentUser !== null) {
+      this.isAttendEnabled = true;
+    }
     this.eventService.events.subscribe(response => {
       if (this.showOld) {
         this.oldEvents = response.filter(value => {
@@ -50,11 +55,7 @@ export class ListEventComponent implements OnInit {
       }
     });
     this.userService.userLoggedIn$.subscribe(value => {
-      if (value != null) {
-        console.log('user logged in: ' + value.username);
-      } else {
-        console.log('user logged out' );
-      }
+      this.isAttendEnabled = value != null;
       this.currentUser = value;
     })
   }
@@ -74,17 +75,13 @@ export class ListEventComponent implements OnInit {
     if (!secEvent.attendees) {
       secEvent.attendees = [];
     }
-    this.eventService.attend(secEvent, this.currentUser).subscribe(response => {
-
-    });
+    this.eventService.attend(secEvent, this.currentUser).subscribe();
   }
 
   unattend(secEvent: SecEvent) {
     if (!secEvent.attendees) {
       secEvent.attendees = [];
-    } else {
-      secEvent.attendees.filter(value => value.username !== this.currentUser.username);
     }
-    console.log('unattend')
+    this.eventService.unattend(secEvent, this.currentUser).subscribe();
   }
 }
