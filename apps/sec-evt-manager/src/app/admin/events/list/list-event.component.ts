@@ -3,6 +3,7 @@ import {EventService} from "../../../services/event.service";
 import {SecEvent} from "../../../model/secEvent";
 import {UserService} from "../../../services/user.service";
 import {isDefined} from "@angular/compiler/src/util";
+import {User} from "../../../model/user";
 
 @Component({
   selector: 'sec-apps-list-event',
@@ -13,6 +14,7 @@ export class ListEventComponent implements OnInit {
   showOld = true;
   secEvents: SecEvent[];
   oldEvents: SecEvent[];
+  currentUser: User = null;
 
   constructor(private eventService: EventService, private userService: UserService) {
   }
@@ -47,15 +49,22 @@ export class ListEventComponent implements OnInit {
         });
       }
     });
+    this.userService.userLoggedIn$.subscribe(value => {
+      if (value != null) {
+        console.log('user logged in: ' + value.username);
+      } else {
+        console.log('user logged out' );
+      }
+      this.currentUser = value;
+    })
   }
 
   signed(secEvent: SecEvent): boolean {
-    const currentUser = this.userService.currentUser;
-    if (isDefined(currentUser) || currentUser === null) {
+    if (!isDefined(this.currentUser) || this.currentUser === null) {
       return false;
     }
-    if (secEvent.attendees) {
-      const users = secEvent.attendees.filter(value => value.username === currentUser.username);
+    if (secEvent.attendees && secEvent.attendees.length > 0) {
+      const users = secEvent.attendees.filter(value => value.username === this.currentUser.username);
       return users.length > 0;
     }
     return false;
@@ -65,7 +74,7 @@ export class ListEventComponent implements OnInit {
     if (!secEvent.attendees) {
       secEvent.attendees = [];
     }
-    this.eventService.attend(secEvent, this.userService.currentUser).subscribe( response => {
+    this.eventService.attend(secEvent, this.currentUser).subscribe(response => {
 
     });
   }
@@ -74,7 +83,7 @@ export class ListEventComponent implements OnInit {
     if (!secEvent.attendees) {
       secEvent.attendees = [];
     } else {
-      secEvent.attendees.filter(value => value.username !== this.userService.currentUser.username);
+      secEvent.attendees.filter(value => value.username !== this.currentUser.username);
     }
     console.log('unattend')
   }

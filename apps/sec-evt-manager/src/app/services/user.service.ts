@@ -8,8 +8,8 @@ import {environment} from "../../environments/environment";
   providedIn: 'root'
 })
 export class UserService {
-  currentUser: User;
   private userSource = new Subject<User>();
+  currentUser: User;
   userLoggedIn$ = this.userSource.asObservable();
 
   constructor(private http: HttpClient) {

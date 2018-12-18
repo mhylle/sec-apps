@@ -106,6 +106,13 @@
           "username": "mnh",
           "accessLevel": "admin",
           "id": 1
+        },
+        {
+          "givenName": "Peter",
+          "familyName": "Petersen",
+          "username": "pts",
+          "accessLevel": "user",
+          "id": 2
         }
       ]
     }
