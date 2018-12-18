@@ -21,6 +21,7 @@ import {EventAttendeesComponent} from './admin/events/view/attendees/event-atten
 import {LoginComponent} from './core/security/login/login.component';
 import {HomeComponent} from './home/home.component';
 import {MaterialModule} from "./core/material-module/material.module";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [AppComponent, CreateUserComponent, ViewUserComponent, ListUserComponent, MenuComponent, CreateEventComponent, ListEventComponent, ViewEventComponent, EventAttendeesComponent, LoginComponent, HomeComponent],
@@ -35,7 +36,8 @@ import {MaterialModule} from "./core/material-module/material.module";
     LayoutModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
-    MaterialModule
+    MaterialModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

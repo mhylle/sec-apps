@@ -5,6 +5,7 @@ import {environment} from "../../environments/environment";
 import {SecEvent} from "../model/secEvent";
 import {User} from "../model/user";
 import {isDefined} from "@angular/compiler/src/util";
+import {ToastrService} from "ngx-toastr";
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,11 @@ export class EventService {
     if (!isDefined(secEvent.attendees) || secEvent.attendees === null) {
       secEvent.attendees = [];
     }
+    if (secEvent.maximumAttendees > 0) {
+      if (secEvent.attendees.length === secEvent.maximumAttendees) {
+        return of();
+      }
+    }
     if (secEvent.attendees.find(value => value.username === currentUser.username)) {
       return of();
     } else {
@@ -41,7 +47,7 @@ export class EventService {
     if (!isDefined(secEvent.attendees) || secEvent.attendees === null) {
       secEvent.attendees = [];
     }
-    secEvent.attendees = secEvent.attendees.filter(value =>  value.username !== currentUser.username);
+    secEvent.attendees = secEvent.attendees.filter(value => value.username !== currentUser.username);
     return this.http.put<SecEvent>(environment.backend + '/events/' + secEvent.id, secEvent);
   }
 }

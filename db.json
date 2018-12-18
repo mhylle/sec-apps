@@ -101,13 +101,6 @@
       "id": 5,
       "attendees": [
         {
-          "givenName": "Martin",
-          "familyName": "Hylleberg",
-          "username": "mnh",
-          "accessLevel": "admin",
-          "id": 1
-        },
-        {
           "givenName": "Peter",
           "familyName": "Petersen",
           "username": "pts",

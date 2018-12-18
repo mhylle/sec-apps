@@ -82,6 +82,7 @@
             "codeCoverage": true,
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/ngx-toastr/toastr.css",
               "apps/sec-evt-manager/src/styles.css"
             ],
             "scripts": [],

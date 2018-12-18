@@ -4,6 +4,7 @@ import {SecEvent} from "../../../model/secEvent";
 import {UserService} from "../../../services/user.service";
 import {isDefined} from "@angular/compiler/src/util";
 import {User} from "../../../model/user";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'sec-apps-list-event',
@@ -17,7 +18,7 @@ export class ListEventComponent implements OnInit {
   currentUser: User = null;
   isAttendEnabled = false;
 
-  constructor(private eventService: EventService, private userService: UserService) {
+  constructor(private toastr: ToastrService, private eventService: EventService, private userService: UserService) {
   }
 
   ngOnInit() {
@@ -72,6 +73,12 @@ export class ListEventComponent implements OnInit {
   }
 
   attend(secEvent: SecEvent) {
+    this.toastr.success('The user ' + this.currentUser.username + ' was signed for the event', 'User signed',
+      {
+        closeButton: true,
+        progressBar: true,
+        positionClass: 'toast-top-right'
+      });
     if (!secEvent.attendees) {
       secEvent.attendees = [];
     }
